@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag19-ej1</title>
+</head>
+<body>
+    <!-- Crea una página que solicite al usuario su nombre. En caso de que el nombre
+indicado sea “Roger” se mostrará un mensaje dándole la bienvenida. En caso
+contrario se mostrará el mensaje “Página no disponible”.  -->
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="submit" value="Enviar" onclick="comprobarNombre()">
+    </form>
+    <p id="resultado"></p>
+    <script>
+        function comprobarNombre() {
+            event.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            if (nombre === "Roger") {
+                document.getElementById("resultado").innerHTML = "Bienvenido Roger";
+            } else {
+                document.getElementById("resultado").innerHTML = "Página no disponible";
+            }
+        }
+    </script>
+    
+</body>
+</html>

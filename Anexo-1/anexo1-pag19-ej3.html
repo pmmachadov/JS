@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag19-ej3</title>
+</head>
+<body>
+<!-- Crea una página que solicite al usuario un nombre y contraseña. Si el nombre de usuario es incorrecto se mostrará el mensaje de error “Usuario no reconocido.”
+    SI el nombre de usuario es correcto pero no la contraseña se mostrará el mensaje “Contraseña incorrecta”.  -->
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" placeholder="Contraseña">
+        <input type="submit" value="Enviar" onclick="comprobarNombre()">
+    </form>
+    <p id="resultado"></p>
+    <script>
+        function comprobarNombre() {
+            event.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const contraseña = document.getElementById("contraseña").value;
+            if (nombre === "Roger") {
+                if (contraseña === "CIPSA") {
+                    document.getElementById("resultado").innerHTML = "Bienvenido Roger";
+                } else {
+                    document.getElementById("resultado").innerHTML = "Contraseña incorrecta";
+                }
+            } else {
+                document.getElementById("resultado").innerHTML = "Usuario no reconocido";
+            }
+        }
+    </script>
+    
+</body>
+</html>

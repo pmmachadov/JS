@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Crea una página que solicite al usuario un nombre y contraseña. Si el nombre
+es “Roger” y la contraseña es “CIPSA” se mostrará un mensaje de bienvenida.  -->
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" placeholder="Contraseña">
+        <input type="submit" value="Enviar" onclick="comprobarNombre()">
+    </form>
+    <p id="resultado"></p>
+    <script>
+        function comprobarNombre() {
+            event.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const contraseña = document.getElementById("contraseña").value;
+            if (nombre === "Roger" && contraseña === "CIPSA") {
+                document.getElementById("resultado").innerHTML = "Bienvenido Roger";
+            } else {
+                document.getElementById("resultado").innerHTML = "Página no disponible";
+            }
+        }
+    </script>
+</body>
+</html>

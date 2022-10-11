@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag16-ej2</title>
+</head>
+<body>
+
+<!-- Crea un código Javascript con las sentencias necesarias para realizar las siguientes
+operaciones:
+ Declara una variable precio_manzana con el valor 2
+ Se solicita al usuario los kilos de manzanas comprados almacenando el valor en la variable
+kilos_manzanas.
+ Declara una variable precio_naranja con el valor 2.5
+ Se solicita al usuario los kilos de naranjas comprados almacenando el valor en la variable
+kilos_naranjas
+ Declara una variable precio_platano con el valor 1.75
+ Se solicita al usuario los kilos de plátanos comprados almacenando el valor en la variable
+kilos_platanos.
+
+ Declara una variable compra.
+ Incrementa la variable compra con el producto de las variables precio_manzana y
+kilos_manzanas.
+ Incrementa la variable compra con el producto de las variables precio_naranja y kilos_naranjas.
+ Incrementa la variable compra con el producto de las variables precio_platano y
+kilos_platanoss.
+ Declara una variable oferta cuyo valor sea 0.08
+ Declara una variable descuento cuyo valor sea el producto de las variables compra y oferta.
+ Modifica el valor de la variable compra restándole el valor de la variable descuento.
+ Muestra el valor de las variable compra con el mensaje “El precio de su compra es:
+<valor_compra> Euros”. -->
+
+<form>
+    <label for="kg_de_manzanas">Kg de manzanas:</label>
+    <input type="number" id="kilos_manzanas" placeholder="Kilos de manzanas">
+    <label for="kg_de_naranjas">Kg de naranjas:</label>
+    <input type="number" id="kilos_naranjas" placeholder="Kilos de naranjas">
+    <label for="kg_de_platanos">Kg de plátanos:</label>
+    <input type="number" id="kilos_platanos" placeholder="Kilos de plátanos">
+    <input type="submit" value="Calcular" onclick="calcular()">
+</form>
+<p id="resultado"></p>
+<script>
+    function calcular() {
+        event.preventDefault();
+        const precio_manzana = 2;
+        const kilos_manzanas = Number(document.getElementById("kilos_manzanas").value);
+        const precio_naranja = 2.5;
+        const kilos_naranjas = Number(document.getElementById("kilos_naranjas").value);
+        const precio_platano = 1.75;
+        const kilos_platanos = Number(document.getElementById("kilos_platanos").value);
+        let compra = 0;
+        compra += precio_manzana * kilos_manzanas;
+        compra += precio_naranja * kilos_naranjas;
+        compra += precio_platano * kilos_platanos;
+        const oferta = 0.08;
+        const descuento = compra * oferta;
+        compra -= descuento;
+        document.getElementById("resultado").innerHTML = `El precio de su compra es: ${compra} Euros`;
+    }
+</script>
+
+</body>
+</html>
