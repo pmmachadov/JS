@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag19-ej5</title>
+</head>
+<body>
+    <!-- Crea una página que solicite al usuario un valor numérico. Si el valor
+introducido es múltiplo de 2 deberá mostrarse el mensaje “El número es par”.
+En caso contrario deberá mostrarse el mensaje “El número es impar”.  -->
+
+        <label for="numero">Introduce un número</label>
+        <input type="number" id="numero">
+        <input type="button" value="Enviar" onclick="comprobarParidad()">
+    <p id="resultado"></p>
+    <script>
+        function comprobarParidad() {
+            const numero = document.getElementById("numero").value;
+            if (numero % 2 === 0) {
+                document.getElementById("resultado").innerHTML = "El número es par";
+            } else {
+                document.getElementById("resultado").innerHTML = "El número es impar";
+            }
+        }
+      </script>
+    
+</body>
+</html>

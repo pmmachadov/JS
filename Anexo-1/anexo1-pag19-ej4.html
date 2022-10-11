@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag19-ej4</title>
+</head>
+<body>
+
+    <!-- Crea una página que solicite al usuario el nombre del mes y día actual. Si el
+usuario introduce el día 25 de “diciembre” deberá mostrarse el mensaje “Es
+Navidad”.  -->
+    <form>
+        <label for="mes">Mes:</label>
+        <input type="text" id="mes" placeholder="Mes">
+        <label for="dia">Día:</label>
+        <input type="number" id="dia" placeholder="Día">
+        <input type="submit" value="Enviar" onclick="comprobarFecha()">
+    </form>
+    <p id="resultado"></p>
+    <script>
+        function comprobarFecha() {
+            event.preventDefault();
+            const mes = document.getElementById("mes").value;
+            const dia = document.getElementById("dia").value;
+            if (mes === "diciembre" && dia === 25) {
+                document.getElementById("resultado").innerHTML = "No es Navidad";
+            } else {
+                document.getElementById("resultado").innerHTML = "Es Navidad";
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
