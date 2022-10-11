@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag14-ej1</title>
+</head>
+<body>
+    <!-- Haz que la página muestre una línea indicando la edad que tendrá el usuario el año
+        próximo. -->
+       
+
+    <form>
+        <label for="edad">Introduce tu edad:</label>
+        <input type="number" name="Edad" id="edad">
+        <input type="submit" value="Calcular" onclick="calcular()">
+    </form>
+    <p id="resultado"></p>
+    <script>
+        function calcular() {
+            event.preventDefault();
+            const edad = Number(document.getElementById("edad").value);
+            const edadProximoAnio = parseInt(edad) + 1;
+            document.getElementById("resultado").innerHTML = `Tu edad el año próximo será ${edadProximoAnio}`;
+        }
+    </script>
+    
+
+</body>
+
+</html>
