@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo-1-pag25-ej1</title>
+</head>
+<body>
+    <!-- Crea una aplicación que muestre en pantalla los números pares comprendidos del 100 al 0 ambos
+incluidos empleando los tres tipos de bucles for, while y do-while.  -->
+   
+<input type="button" value="Enviar" value="Calcular" onclick="calcular()">
+    <p id="resultadoFor"></p>
+    <p id="resultadoWhile"></p>
+    <p id="resultadoDoWhile"></p>
+    <script>
+        function calcular() {
+            let resultadoFor = "";
+            for (let i = 100; i >= 0; i--) {
+                if (i % 2 == 0) {
+                    resultadoFor += i + " ";
+                }
+            }
+            document.getElementById("resultadoFor").innerHTML = resultadoFor;
+        
+        let resultadoWhile = "";
+        let j = 100;
+        while (j >= 0) {
+            if (j % 2 == 0) {
+                resultadoWhile += j + " ";
+            }
+            j--;
+        }
+        document.getElementById("resultadoWhile").innerHTML = resultadoWhile;
+
+        let resultadoDoWhile = "";
+        let k = 100;
+        do {
+            if (k % 2 == 0) {
+                resultadoDoWhile += k + " ";
+            }
+            k--;
+        } while (k >= 0);
+        document.getElementById("resultadoDoWhile").innerHTML = resultadoDoWhile;
+        }
+    </script>
+
+</body>
+</html>
