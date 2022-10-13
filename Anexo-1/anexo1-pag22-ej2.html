@@ -13,80 +13,52 @@
     segundo valor y elige como operación una division se muestre el mensaje
     “division por cero”.  -->
 
-    <input type="button" value="Enviar" onclick="calcular()">
-    <p id="resultado"></p>
-    <script>
-        function calcular() {
-            const num1 = parseInt(prompt("Introduce el primer número"));
-            const num2 = parseInt(prompt("Introduce el segundo número"));
-            const operacion = prompt("Introduce la operación a realizar");
-            let resultado = 0;
-            switch (operacion) {
-                case "suma":
-                    resultado = parseInt(num1) + parseInt(num2);
-                    break;
-                case "resta":
-                    resultado = parseInt(num1) - parseInt(num2);
-                    break;
-                case "producto":
-                    resultado = parseInt(num1) * parseInt(num2);
-                    break;
-                case "division":
-                    resultado = parseInt(num1) / parseInt(num2);
-                    break;
-                default:
+  
+        <label for="operacion">Elige la operación</label>
+        <select name="operacion" id="operacion">
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="multiplicacion">Multiplicación</option>
+            <option value="division">División</option>
+        </select>
+     
+        <input type="button" value="Enviar" onclick="calcular()">
 
-                    //Primero comprobamos que es un número lo que se nos pasa
-                    if (isNaN(n)) {
-                        throw new RangeError('¡Debes facilitar un número!')
-                    }
-                    //compramos la división con -infinito 
-                    return (1 / resultado == -Infinity);
-            }
+        <script>
+           
+            function calcular() {         
+            let num1 = prompt("Introduce el primer número");
+            let num2 = prompt("Introduce el segundo número");
+            let operacion = document.getElementById("operacion").value;
 
-            function notZero(n) {
-                resultado = +resultado;  // Coerce to number.
-                if (!resultado) {  // Matches +0, -0, NaN
-                    throw new Error('Invalid dividend ' + n);
+            //validar que el segundo numero no sea 0
+            if (num2 == 0) {
+                //si es 0 y la operacion es division mostrar mensaje de error
+                if (operacion == "division") {
+                    alert("No se puede dividir por 0");
                 }
-                return resultado;
-            }
-
-            if (operacion != "suma" || operacion != "resta" || operacion != "producto" || operacion != "division") {
-                document.getElementById("resultado").innerHTML = `Operación no válida`;
-            } else if (result == Number.POSITIVE_INFINITY || result == Number.NEGATIVE_INFINITY) {  // si el resultado es infinito
-                result = 0;
-                document.getElementById("resultado").innerHTML = `No se puede dividir entre 0`;
-            } else if (num2 == 0 && num2 == "division") {
-                document.getElementById("resultado").innerHTML = `No se puede dividir entre 0`;
-            } else if (resultado = isNaN) {
-                document.getElementById("resultado").innerHTML = `El resultado no es un numero`;
             } else {
-                resultado = parseInt(num1) / parseInt(num2); //si no es ninguna de las anteriores, se divide
-            }
-
-
-
-
-
-
-
-
-
-            numero1.toFixed(2)
-
-
-
-
-
-
-
-
-
-            document.getElementById("resultado").innerHTML = `El resultado de la operación es ${resultado}`;
+                //si no es 0 y la operacion es division mostrar el resultado
+                if (operacion == "division") {
+                    alert(num1 / num2);
+                } else {
+                    //si no es 0 y la operacion no es division mostrar el resultado
+                    switch (operacion) {
+                        case "suma":
+                            alert(num1 + num2);
+                            break;
+                        case "resta":
+                            alert(num1 - num2);
+                            break;
+                        case "multiplicacion":
+                            alert(num1 * num2);
+                            break;
+                    }
+                }
+            }   
         }
-        
     </script>
+  
 </body>
 
 </html>
