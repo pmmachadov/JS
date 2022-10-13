@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag19-ej8</head>
+    </title>
+</head>
+<body>
+    <!-- Crea una página que solicite al usuario su nombre. SI el usuario introduce su
+nombre y pulsa el botón “Aceptar” deberá mostrarse un mensaje de
+bienvenida “Encantado de conocerte, XXXX”. Si el usuario no introduce ningún
+nombre o cierra el cuadro de diálogo sin responder deberá mostrarse el
+mensaje “Usuario anónimo”.  -->
+
+    <input type="button" value="Enviar" onclick="saludar()">
+    <p id="resultado"></p>
+    <script>
+        function saludar() {
+            const nombre = prompt("Introduce tu nombre");
+            if (nombre == null || nombre == "") {
+                document.getElementById("resultado").innerHTML = `Usuario anónimo`;
+            } else {
+                document.getElementById("resultado").innerHTML = `Encantado de conocerte, ${nombre}`;
+            }
+        }
+    </script>
+    
+</body>
+</html>
