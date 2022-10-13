@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -36,17 +36,17 @@ personas y muestre a continuación el nombre de la mayor y la menor de ellas.  -
             const nombre3 = document.getElementById("nombre3").value;
             const edad3 = document.getElementById("edad3").value;
             if (edad1 > edad2 && edad1 > edad3) {
-                document.getElementById("resultado").innerHTML = "La persona mayor es " + nombre1;
+                document.getElementById("resultado").innerHTML = `La persona mayor es ${nombre1} con ${edad1} años`;
             } else if (edad2 > edad1 && edad2 > edad3) {
-                document.getElementById("resultado").innerHTML = "La persona mayor es " + nombre2;
+                document.getElementById("resultado").innerHTML = `La persona mayor es ${nombre2} con ${edad2} años`;
             } else if (edad3 > edad1 && edad3 > edad2) {
-                document.getElementById("resultado").innerHTML = "La persona mayor es " + nombre3;
+                document.getElementById("resultado").innerHTML = `La persona mayor es ${nombre3} con ${edad3} años`;
+            } else {
+                document.getElementById("resultado").innerHTML = `Las edades son iguales`;
             }
-            if (edad1 < edad2 && edad1 < edad3) {
-                document.getElementById("resultado").innerHTML += " y la persona menor es " + nombre1;
-            } else if (edad2 < edad1 && edad2 < edad3) {
-                document.getElementById("resultado").innerHTML += " y la persona menor es " + nombre2;
-            } else if (edad3 < edad1
-    
-</body >
-</html >
+        }
+    </script>
+
+</body>
+
+</html>
