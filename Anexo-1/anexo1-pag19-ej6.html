@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag19-ej6</title>
+</head>
+
+<body>
+
+    <!-- Crea una página que solicite al usuario el número de preguntas existentes en
+un examen de tipo Test, y cuántas ha acertado.
+
+En función de los valores indicados la página deberá calcular la nota obtenida y mostrar la calificación que corresponda en función de los siguientes haremos:
+
+ Si la nota está entre 0 y 2  Muy deficiente
+ Si la nota está entre 2 y 5  Insuficiente
+ Si la nota está entre 5 y 6  Suficiente
+ Si la nota está entre 6 y 7  Bien
+ SI la nota está entre 7 y 9  Notable
+ Si la nota está entre 9 y 10  Sobresaliente.  -->
+
+    <label for="numeroPreguntas">Introduce el número de preguntas</label>
+    <input type="number" id="numeroPreguntas">
+    <label for="numeroAciertos">Introduce el número de aciertos</label>
+    <input type="number" id="numeroAciertos">
+    <input type="button" value="Enviar" onclick="calcularNota()">
+    <p id="resultado"></p>
+    <script>
+        function calcularNota() {
+            const numeroPreguntas = document.getElementById("numeroPreguntas").value;
+            const numeroAciertos = document.getElementById("numeroAciertos").value;
+            const nota = ((numeroAciertos * 100) / numeroPreguntas) / 10;
+            debugger;
+            if (nota >= 0 && nota < 2) {
+                document.getElementById("resultado").innerHTML = "Muy deficiente";
+            } else if (nota >= 2 && nota < 5) {
+                document.getElementById("resultado").innerHTML = "Insuficiente";
+            } else if (nota >= 5 && nota < 6) {
+                document.getElementById("resultado").innerHTML = "Suficiente";
+            } else if (nota >= 6 && nota < 7) {
+                document.getElementById("resultado").innerHTML = "Bien";
+            } else if (nota >= 7 && nota < 9) {
+                document.getElementById("resultado").innerHTML = "Notable";
+            } else if (nota >= 9 && nota <= 10) {
+                document.getElementById("resultado").innerHTML = "Sobresaliente";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
