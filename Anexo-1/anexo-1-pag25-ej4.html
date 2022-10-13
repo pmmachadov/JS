@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo-1-pag25-ej4</title>
+</head>
+<body>
+
+    <!-- Crea una aplicación que solicite al usuario un valor entre 1 y 10. La página solicitará
+después uno a uno los valores de la tabla de multiplicar del valor indicado
+inicialmente. Si el usuario acierta cada valor se le mostrará un cuadro de diálogo con el
+mensaje “CORRECTO”. En caso contrario se le mostrará un cuadro de diálogo
+indicando el valor correcto. Una vez preguntados todos los valores la página deberá
+mostrar el porcentaje de aciertos del usuario.  -->
+
+    <input type="text" id="numero" placeholder="Numero">
+    <input type="button" value="Enviar" value="Calcular" onclick="calcular()">
+    <p id="resultado"></p>
+    <script>
+        function calcular() {
+            let numero = document.getElementById("numero").value;
+            let resultado = "";
+            let aciertos = 0;
+            let fallos = 0;
+            let porcentaje = 0;
+            let i = 1;
+            while (i <= 10) {
+                let respuesta = prompt("¿Cuánto es " + numero + " x " + i + "?");
+                if (respuesta == numero * i) {
+                    alert("CORRECTO");
+                    aciertos++;
+                } else {
+                    alert("INCORRECTO, la respuesta correcta es " + numero * i);
+                    fallos++;
+                }
+                i++;
+            }
+            porcentaje = aciertos / 10 * 100;
+            document.getElementById("resultado").innerHTML = `Has acertado ${aciertos} y has fallado ${fallos} por lo que tu porcentaje de aciertos es del ${porcentaje}%`;
+        }
+    </script>
+    
+</body>
+</html>
