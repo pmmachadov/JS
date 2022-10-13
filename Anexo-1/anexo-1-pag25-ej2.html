@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo-1-pag25-ej2</title>
+</head>
+<body>
+    <!-- Crea una aplicación que solicite al usuario un valor numérico. Si el usuario introduce
+un valor no válido como letras o texto, deberá mostrarse un cuadro de diálogo con el
+mensaje “ERROR” y volvérsele a solicitar el valor hasta que lo indique correctamente.
+Para hacer este ejercicio debe emplearse la función isNaN() de Javascript.  -->
+
+    <input type="text" id="numero" placeholder="Numero">
+    <input type="button" value="Enviar" value="Calcular" onclick="calcular()">
+    <p id="resultado"></p>
+    <script>
+        function calcular() {
+            let numero = document.getElementById("numero").value;
+            let resultado = "";
+            while (isNaN(numero)) {
+                alert("ERROR");
+                numero = prompt("Introduce un número");
+            }
+            document.getElementById("resultado").innerHTML = numero;
+        }
+    </script>
+</body>
+</html>
