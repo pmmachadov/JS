@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag22-ej1</title>
+</head>
+<body>
+    <!-- Crea una página que solicite al usuario dos valores numéricos y una operación
+“suma”, “resta”, “producto” o “división”. La página mostrará a continuación el
+resultado correspondiente en función de la operación solicitada.
+Si el usuario introduce una palabra diferente a las indicadas deberá mostrarse
+el mensaje “Operación no válida”.  -->
+
+
+    <input type="button" value="Enviar" onclick="calcular()">
+    <p id="resultado"></p>
+    <script>
+        function calcular() {
+            const num1 = parseInt(prompt("Introduce el primer número"));
+            const num2 = parseInt(prompt("Introduce el segundo número"));
+            const operacion = prompt("Introduce la operación a realizar");
+            let resultado = 0;
+            switch (operacion) {
+                case "suma":
+                    resultado = num1 + num2;
+                    break;
+                case "resta":
+                    resultado = num1 - num2;
+                    break;
+                case "producto":
+                    resultado = num1 * num2;
+                    break;
+                case "división":
+                    resultado = num1 / num2;
+                    break;
+                default:
+                    document.getElementById("resultado").innerHTML = `Operación no válida`;
+                    break;
+            }
+            document.getElementById("resultado").innerHTML = `El resultado de la operación es ${resultado}`;
+        }
+    </script>
+</body>
+</html>
