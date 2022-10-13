@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo-1-pag25-ej3</title>
+</head>
+<body>
+    <!-- Crea una aplicación que solicite al usuario valores mostrando a continuación un cuadro
+de diálogo de confirmación mediante la función confirm() preguntándole si quiere
+continuar. Una vez que termina la página deberá mostrar al usuario la cantidad de
+valores introducidos y su media.  -->
+
+
+    <input type="text" id="numero" placeholder="Numero">
+    <input type="button" value="Enviar" value="Calcular" onclick="calcular()">
+    <p id="resultado"></p>
+    <script>
+        let contador = 0;
+        let suma = 0;
+        let media = 0;
+        let numero = 0;
+        let resultado = "";
+        function calcular() {
+            numero = document.getElementById("numero").value;
+            while (isNaN(numero)) {
+                alert("ERROR");
+                numero = prompt("Introduce un número");
+            }
+            contador++;
+            suma += parseInt(numero);
+            media = suma / contador;
+            //Media toFixed(2) para que solo muestre 2 decimales
+            media = media.toFixed(2);
+            resultado = `La media es: ${media}`;
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
