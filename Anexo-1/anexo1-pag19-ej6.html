@@ -33,7 +33,6 @@ En función de los valores indicados la página deberá calcular la nota obtenid
             const numeroPreguntas = document.getElementById("numeroPreguntas").value;
             const numeroAciertos = document.getElementById("numeroAciertos").value;
             const nota = ((numeroAciertos * 100) / numeroPreguntas) / 10;
-            debugger;
             if (nota >= 0 && nota < 2) {
                 document.getElementById("resultado").innerHTML = "Muy deficiente";
             } else if (nota >= 2 && nota < 5) {
