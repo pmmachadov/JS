@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag30-ej3</title>
+</head>
+<body>
+    <!-- Crea una función calcular() que recibe como parámetros tres valores: a, b, y op,
+y devuelve un valor en base al valor del parámetro op:
+a. Si op = 1  Retorna la suma ( a + b )
+b. Si op =2  Retorna la resta ( a – b )
+c. SI op = 3  Retorna el producto ( a x b )
+d. Si op = 4  Retorna el cociente ( a / b )
+e. Si op no vale ninguno de los valores anteriores la función devuelve
+como resultado el mensaje “Operación no reconocida.”.  -->
+
+<script>
+    function calcular(a,b,op){
+        switch (op) {
+            case 1:
+                return a+b;
+                break;
+            case 2:
+                return a-b;
+                break;
+            case 3:
+                return a*b;
+                break;
+            case 4:
+                return a/b;
+                break;
+            default:
+                return "Operación no reconocida.";
+                break;
+        }
+    }
+    console.log(calcular(2,3,1));
+    console.log(calcular(2,3,2));
+    console.log(calcular(2,3,3));
+    console.log(calcular(2,3,4));
+    console.log(calcular(2,3,5));
+</script>
+    
+</body>
+</html>
