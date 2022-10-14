@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejerccio-resuelto</title>
+</head>
+
+<body>
+    <!-- Crea una página web que define un tipo de objeto Cuadrado, solicite la base y la altura
+de tres cuadrados y a continuación muestre en una tabla sus áreas.  -->
+    <script>
+        function Cuadrado() {
+            this.base = 0;
+            this.altura = 0;
+            this.calcularArea = function () {
+                return this.base * this.altura;
+            };
+        }
+        //    Una vez definido el tipo de objeto, ya pueden crearse objetos cuadrados indicando a
+        //    cada uno su correspondiente base y altura mediante sus propiedades:
+        var cuadrado1 = new Cuadrado();
+        cuadrado1.base = Number(prompt("Introduce base cuadrado 1", ""));
+        cuadrado1.altura = Number(prompt("Introduce la altura de cuadrado 1", ""));
+        var cuadrado2 = new Cuadrado();
+        cuadrado2.base = Number(prompt("Introduce base cuadrado 2", ""));
+        cuadrado2.altura = Number(prompt("Introduce la altura de cuadrado 2", ""));
+        var cuadrado3 = new Cuadrado();
+        cuadrado3.base = Number(prompt("Introduce base cuadrado 3", ""));
+        cuadrado3.altura = Number(prompt("Introduce la altura de cuadrado 3", ""));
+        //    Para mostrar al área de cada cuadrado sólo es necesario llamar al método
+        //         calcularArea() de cada uno de ellos:
+        document.write("<table>");
+        document.write("<tr><td>Area del cuadrado 1: " + cuadrado1.calcularArea() +
+            "</td></tr>");
+        document.write("<tr><td>Area del cuadrado 2: " + cuadrado2.calcularArea() +
+            "</td></tr>");
+        document.write("<tr><td>Area del cuadrado 3: " + cuadrado3.calcularArea() +
+            "</td></tr>");
+        document.write("</table>"); 
+    </script>
+</body>
+
+</html>
