@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anexo1-pag30-ej5</title>
+</head>
+
+<body>
+    <!-- Pide al usuario dos parámetros
+    que determinan un rango de valores válidos admitidos para escribir las tablas de multiplicar. La función solicitará al usuario un valor correcto hasta que introduzca un valor numérico comprendido
+    en el rango.  -->
+
+    <script>
+        function solicitarValor() {
+            let valor = prompt("Introduce un valor entre 1 y 100");
+            while (valor <= 1 || valor >= 100) {
+            }
+            return valor;
+        }
+        function mostrarTabla(valor) {
+            for (let i = 1; i <= 10; i++) {
+                document.write(valor + " x " + i + " = " + valor * i + "<br>");
+            }
+        }
+        let valor1 = solicitarValor();
+        let valor2 = solicitarValor();
+        for (let i = valor1; i <= valor2; i++) {
+            mostrarTabla(i);
+            document.write("<br>");
+        }
+    </script>
+
+</body>
+
+</html>
