@@ -39,16 +39,16 @@ function solicitarNombre() {
 // Muestra los datos
 function mostrarDatos() {
     // Muestra los datos
-    document.write("<h3>Tabla de socios</h3>");
-    document.write("<table border='1'>");
-    document.write("<tr><th>Nombre</th></tr>");
+    document.write("<h3>Tabla de socios</h3>"); // Título
+    document.write("<table border='1'>"); // Inicio de la tabla. Borde de 1px
+    document.write("<tr><th>Nombre</th></tr>"); // Cabecera de la tabla
     for (const element of socios) {
         document.write("<tr><td>" + element + "</td></tr>");
     }
-    document.write("</table>");
-    document.write("<h3>Tabla de socios ordenados</h3>");
-    document.write("<table border='1'>");
-    document.write("<tr><th>Nombre</th></tr>");
+    document.write("</table>"); // Fin de la tabla
+    document.write("<h3>Tabla de socios ordenados</h3>"); // Título
+    document.write("<table border='1'>"); // Inicio de la tabla. Borde de 1px
+    document.write("<tr><th>Nombre</th></tr>"); // Cabecera de la tabla
     socios.sort(); // Ordena alfabéticamente
     for (const element of socios) {
         document.write("<tr><td>" + element + "</td></tr>");  
